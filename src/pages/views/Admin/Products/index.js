@@ -1,18 +1,24 @@
 import React from 'react'
-import PropTypes from 'prop-types';
+import htmlRequest from '../../../../api/productApi'
+import { Link } from 'react-router-dom';
 
-const ProductsManager = ({ products, onRemove }) => {
+const ProductsManager = ({ products, setProducts }) => {
     const removeHandle = (id) => {
-        onRemove(id)
+        htmlRequest.remove(id)
+        const newProducts = products.filter(product => product.id !== id);
+        setProducts(newProducts);
     }
     return (
         <div>
             {/* Page Heading */}
             <h1 className="h3 mb-2 text-gray-800">Tables</h1>
             <p className="mb-4">DataTables is a third party plugin that is used to generate the demo table below. For more
-          information about DataTables, please visit the <a target="_blank" href="https://datatables.net">official
+          information about DataTables, please visit the <a href="https://datatables.net">official
             DataTables documentation</a>.</p>
             {/* DataTales Example */}
+            <div>
+                <Link to="/admin/product/add" className="mb-2 btn btn-primary">Add Product</Link>
+            </div>
             <div className="card shadow mb-4">
                 <div className="card-header py-3">
                     <h6 className="m-0 font-weight-bold text-primary">DataTables Example</h6>

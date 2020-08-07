@@ -1,11 +1,16 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+import {Link} from 'react-router-dom'
+import TopHeader from './Top/index'
+import MidHeader from './Mid/index'
+import BotHeader from './Bot'
 
 const Header = props => {
     return (
-        <div>
-            Header Views
-        </div>
+      <header className="header-area">
+      <TopHeader />
+      <MidHeader />
+      <BotHeader />
+    </header>
     )
 }
 

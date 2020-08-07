@@ -1,10 +1,24 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React, {useEffect} from 'react'
+import Slider from '../../../../components/Main/Home/Slider'
+import Banner from '../../../../components/Main/Home/Banner'
+import ProductArea from '../../../../components/Main/Home/ProductArea'
+import DealTheDay from '../../../../components/Main/Home/DealTheDay'
+import BannerFullWidth from '../../../../components/Main/Home/BannerFullWidth'
+import BrandLogoArea from '../BrandLogoArea'
 
-const Home = props => {
+const Home = ({products, setPage}) => {
+
+  useEffect(() => {
+    setPage({name: 'Home', url: '/'})
+  }, [])
     return (
         <div>
-            Home Page
+          <Slider />
+          <Banner />
+          <DealTheDay />
+          <BannerFullWidth />
+          <ProductArea />
+          <BrandLogoArea />
         </div>
     )
 }

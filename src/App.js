@@ -1,43 +1,67 @@
-import React, { useState } from 'react';
-// import Products from './components/Products';
-// import Box from './components/Box/Box';
-// import Home from './components/Main/NavBar'
-// import Product from './components/Product';
-import dataFake from './dataFake';
+import React, { useState, useEffect } from 'react';
 import Routers from './routers'
-// import {
-//   BrowserRouter as Router,
-//   Switch,
-//   Route,
-//   Link
-// } from "react-router-dom";
-// import AddProduct from './components/AddProduct';
+import productApi from './api/productApi'
+import categoryApi from './api/categoryApi'
+
 function App() {
 
-  const [products, setProducts] = useState(dataFake);
-  const [status, setStatus] = useState(false);
-  const [color, setColor] = useState('green');
-  const onHandleClick = () => {
-    // setStatus(true);
-    setColor('red');
-  }
-  const onHandleRemove = (id) => {
-    const newProducts = products.filter(product => product.id !== id);
-    setProducts(newProducts);
-  }
-  const onHanleAdd = (product) => {
-    const newProduct = {
-      id: products.length + 1,
-      ...product
+  const [product, setProduct] = useState({});
+  const [products, setProducts] = useState([]);
+  const [category, setCategory] = useState({});
+  const [categories, setCategories] = useState([]);
+
+  // List product
+  useEffect(() => {
+    const getProducts = async () => {
+      try {
+        const { data } = await productApi.getAll();
+        setProducts(data)
+      } catch (error) {
+        console.log('Fail to request API: ', error)
+      }
     }
-    setProducts([
-      ...products,
-      newProduct
-    ])
+    getProducts();
+  }, [])
+
+  // List category
+  useEffect(() => {
+    const getCategories = async () => {
+      try {
+        const { data } = await categoryApi.getAll();
+        setCategories(data)
+      } catch (error) {
+        console.log('Fail to request API: ', error)
+      }
+    }
+    getCategories();
+  }, [])
+
+  // Thêm sản phẩm
+  const onHandleAdd = async (product) => {
+    try {
+      const { data } = await productApi.create(product);
+      setProducts([
+        ...products,
+        data
+      ])
+    } catch (error) {
+      console.log('failed to request API: ', error)
+    }
   }
+
   return (
     <div className="App">
-      <Routers products={products} onRemove={onHandleRemove} />
+      <Routers 
+        products={products} 
+        setProducts={setProducts} 
+        onAdd={onHandleAdd} 
+        category={category}
+        setCategory={setCategory}
+        productDetail={product}
+        setProductDetail={setProduct}
+        categories={categories}
+        setCategories={setCategories}
+      />
     </div>
   )
 
