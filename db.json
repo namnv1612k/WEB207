@@ -170,28 +170,52 @@
   },
   "slides": [
     {
-      "id": "1",
-      "image": "https://cdn.tgdd.vn/2020/04/banner/a51-800-300-800x300.png"
+      "id": 1,
+      "title_1": "Giá rẻ",
+      "title_2": "Uy tín",
+      "title_3": "Chất lượng",
+      "content": "Phù hợp mọi khách hàng",
+      "image": "https://firebasestorage.googleapis.com/v0/b/storage-2ebad.appspot.com/o/images%2Fslide%2Fhome4-slider1.jpg?alt=media&token=a35c1962-981b-473b-b79a-d1ee539afcc5"
     },
     {
-      "id": "2",
-      "image": "https://cdn.tgdd.vn/2020/04/banner/800-300-800x300-33.png"
+      "id": 2,
+      "title_1": "Giá rẻ",
+      "title_2": "Uy tín",
+      "title_3": "Chất lượng",
+      "content": "Phù hợp mọi khách hàng",
+      "image": "https://firebasestorage.googleapis.com/v0/b/storage-2ebad.appspot.com/o/images%2Fslide%2Fhome4-slider2.jpg?alt=media&token=8e18adaa-3189-4a2e-9b10-391df9af70f6"
     },
     {
-      "id": "3",
-      "image": "https://cdn.tgdd.vn/2020/04/banner/smartwatch-800-300-800x300-1.png"
+      "id": 3,
+      "title_1": "Giá rẻ",
+      "title_2": "Uy tín",
+      "title_3": "Chất lượng",
+      "content": "Phù hợp mọi khách hàng",
+      "image": "https://firebasestorage.googleapis.com/v0/b/storage-2ebad.appspot.com/o/images%2Fslide%2Fhome3-slider1.jpg?alt=media&token=518642f6-611d-4a40-b69e-c8917de140c1"
     },
     {
-      "id": "4",
-      "image": "https://cdn.tgdd.vn/2020/04/banner/pk-304-800-300-800x300-1.png"
+      "id": 4,
+      "title_1": "Giá rẻ",
+      "title_2": "Uy tín",
+      "title_3": "Chất lượng",
+      "content": "Phù hợp mọi khách hàng",
+      "image": "https://firebasestorage.googleapis.com/v0/b/storage-2ebad.appspot.com/o/images%2Fslide%2Fhome3-slider2.jpg?alt=media&token=0b9b5e69-a37f-4115-b33d-4be4f1f0f4b6"
     },
     {
-      "id": "5",
-      "image": "https://cdn.tgdd.vn/2020/04/banner/800-300-800x300-28.png"
+      "id": 5,
+      "title_1": "Giá rẻ",
+      "title_2": "Uy tín",
+      "title_3": "Chất lượng",
+      "content": "Phù hợp mọi khách hàng",
+      "image": "https://firebasestorage.googleapis.com/v0/b/storage-2ebad.appspot.com/o/images%2Fslide%2F1.jpg?alt=media&token=3e60d3db-a156-435d-9c1f-d8756827b370"
     },
     {
-      "image": "https://cdn.tgdd.vn/2020/04/banner/a9new2f-800-300-800x300.png",
-      "id": "57ET-8x"
+      "title_1": "Giá rẻ",
+      "title_2": "Uy tín",
+      "title_3": "Chất lượng",
+      "content": "Phù hợp mọi khách hàng",
+      "image": "https://firebasestorage.googleapis.com/v0/b/storage-2ebad.appspot.com/o/images%2Fslide%2F3.jpg?alt=media&token=79d9adde-108d-4c0e-a6b3-e595db259156",
+      "id": 6
     }
   ],
   "comments": [
@@ -225,5 +249,24 @@
       "created_at": "Tue Jul 28 2020 15:50:40 GMT+0700 (Giờ Đông Dương)",
       "id": 5
     }
-  ]
+  ],
+  "albums": [
+    {
+      "id": 1,
+      "product_id": 2,
+      "image": "https://firebasestorage.googleapis.com/v0/b/storage-2ebad.appspot.com/o/images%2F110094266_319000006147143_7705818573112667544_n.jpg?alt=media&token=56017d73-0e6c-424d-8a75-61d9b7e98023"
+    },
+    {
+      "id": 2,
+      "product_id": 2,
+      "image": "https://firebasestorage.googleapis.com/v0/b/storage-2ebad.appspot.com/o/images%2FGolden-Retriever-10-1024x686.jpg?alt=media&token=7d83e9f7-19fb-428a-a8b3-7180ffa3727e"
+    },
+    {
+      "id": 3,
+      "product_id": 2,
+      "image": "https://firebasestorage.googleapis.com/v0/b/storage-2ebad.appspot.com/o/images%2Ffacebook_011.jpg?alt=media&token=f146f856-8eff-4ac3-bbdb-d4b28768c057"
+    }
+  ],
+  "orders": [],
+  "order_detail": []
 }

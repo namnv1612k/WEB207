@@ -6,11 +6,8 @@ import DealTheDay from '../../../../components/Main/Home/DealTheDay'
 import BannerFullWidth from '../../../../components/Main/Home/BannerFullWidth'
 import BrandLogoArea from '../BrandLogoArea'
 
-const Home = ({products, setPage}) => {
+const Home = ({products}) => {
 
-  useEffect(() => {
-    setPage({name: 'Home', url: '/'})
-  }, [])
     return (
         <div>
           <Slider />

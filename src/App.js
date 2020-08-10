@@ -48,6 +48,7 @@ function App() {
       console.log('failed to request API: ', error)
     }
   }
+  const [slides, setSlides] = useState([])
 
   return (
     <div className="App">
@@ -61,6 +62,7 @@ function App() {
         setProductDetail={setProduct}
         categories={categories}
         setCategories={setCategories}
+        slides={slides}
       />
     </div>
   )

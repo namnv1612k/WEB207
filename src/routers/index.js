@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import LayoutMain from '../pages/layouts/LayoutMain'
 import LayoutAdmin from '../pages/layouts/LayoutAdmin'
@@ -24,15 +24,11 @@ const Routers = ({
         productDetail, 
         setProductDetail,
         categories,
-        setCategories
+        setCategories,
     }) => {
     const onHandleRemove = (id) => {
         onRemove(id)
     }
-
-    // console.log('categories in router', categories)
-
-    const [page, setPage] = useState({})
 
     return (
         <Router>
@@ -53,19 +49,24 @@ const Routers = ({
                     </LayoutAdmin>
                 </Route>
                 <Route>
-                    <LayoutMain category={category} product={productDetail} page={page}>
+                    <LayoutMain category={category} product={productDetail}>
                         <Switch>
                             <Route path="/" exact>
-                                <Home products={products} setPage={setPage} />
+                                <Home products={products} />
                             </Route>
                             <Route path="/about">
                                 <About />
                             </Route>
                             <Route path="/product/:id" exact>
-                                <DetailProduct setPage={setPage} product={productDetail} setProduct={setProductDetail} setCategory={setCategory} category={category} />
+                                <DetailProduct 
+                                    product={productDetail} 
+                                    setProduct={setProductDetail} 
+                                    setCategory={setCategory} 
+                                    category={category}
+                                />
                             </Route>
                             <Route path="/404-not-found">
-                                <Error404 setPage={setPage} />
+                                <Error404 />
                             </Route>
                         </Switch>
                     </LayoutMain>

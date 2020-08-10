@@ -7,7 +7,7 @@ import ReactFirebaseFileUpload from '../../../../firebase/uploadImage'
 import {Editor} from '@tinymce/tinymce-react'
 import categoryApi from '../../../../api/categoryApi'
 
-const AddProduct = ({ onAdd, categories }) => {
+const AddProduct = ({ onAdd }) => {
     const [urlImage, setUrlImage] = useState("");
     const [image, setImage] = useState(null);
     const [progress, setProgress] = useState(0);
@@ -52,10 +52,6 @@ const AddProduct = ({ onAdd, categories }) => {
         getCategories();
       }, [])
 
-      
-
-
-
     const handleEditorIntro = (content, editor) => {
         setIntro(content)
     }
@@ -65,7 +61,7 @@ const AddProduct = ({ onAdd, categories }) => {
 
     setTimeout(() => {
         console.log('Categories: ',cates)
-    }, 5);
+    }, 5000);
 
     return (
         <div>
