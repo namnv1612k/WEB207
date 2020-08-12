@@ -5,6 +5,7 @@ import httpProduct from "../../../../api/productApi"
 import httpCategory from "../../../../api/categoryApi"
 import httpAlbum from "../../../../api/albumApi"
 import Axios from 'axios'
+import CART from '../../../../cart/index'
 
 const DetailProduct = ({setCategory, product, setProduct, category, cart, setCart}) => {
   const History = useHistory();
@@ -16,6 +17,20 @@ const DetailProduct = ({setCategory, product, setProduct, category, cart, setCar
   }
 
   const [albums, setAlbums] = useState([])
+
+  useEffect(() => {
+    try {
+      // trying to use new API - https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollTo
+      window.scroll({
+        top: 0,
+        left: 0,
+        // behavior: 'smooth',
+      });
+    } catch (error) {
+      // just a fallback for older browsers
+      window.scrollTo(0, 0);
+    }
+  }, []);
 
   // Get data product
   useEffect(() => {
@@ -56,18 +71,14 @@ const DetailProduct = ({setCategory, product, setProduct, category, cart, setCar
   }
 
   // Add cart
-  const addCart = () => {
-    const newCart = product
-    setCart(
-      cart,
-      ...newCart
-    )
-  }
+  // const addCart = (id) => {
+  //   CART.add(id)
+  // }
 
   const {name, image, price, intro,  desc, sale_price} = product
 
   // const albumProduct = albums
-  console.log(albums)
+  // console.log(albums)
 
   return (
     <div>
@@ -157,7 +168,7 @@ const DetailProduct = ({setCategory, product, setProduct, category, cart, setCar
                     <form action="#">
                       <input className="quantity mr-40" min={1} defaultValue={1} type="number" />
                     </form>
-                    <button className="add-cart btn" onClick={addCart}>add to cart</button>
+                    <button className="add-cart btn" onClick={CART.add(id)}>add to cart</button>
                   </div>
                   <div className="wishlist-compear-area">
                     <a href="wishlist.html"><i className="ion-ios-heart-outline" /> Add to Wishlist</a>

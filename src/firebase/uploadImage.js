@@ -39,7 +39,7 @@ const ReactFirebaseFileUpload = ({image,setImage,urlImage,setUrlImage,progress,s
   return (
     <div className="form-group">
       <progress value={progress} max="100" className="col-12" />
-      <label htmlFor="productPrice">Ảnh sản phẩm</label>
+      <label htmlFor="productPrice">Image upload</label>
       <div className="input-group">
         <div className="custom-file">
           <input ref={register({required: true})}  type="file" className="custom-file-input" onChange={handleChange} id="inputGroupFile02" name="image"/>

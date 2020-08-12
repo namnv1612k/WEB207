@@ -6,13 +6,17 @@ import LayoutAdmin from '../pages/layouts/LayoutAdmin'
 import Dashboard from '../pages/views/Admin/Dashboard'
 import ProductsManager from '../pages/views/Admin/Products'
 import AddProduct from '../pages/views/Admin/Products/AddProduct'
+import EditProduct from '../pages/views/Admin/Products/EditProduct'
 
 //Views
 import About from '../pages/views/Main/About'
 import Home from '../pages/views/Main/Home'
 import DetailProduct from '../pages/views/Main/Product/Detail'
 import Error404 from '../pages/views/Main/Error/404'
-
+import Shop from '../pages/views/Main/Shop'
+import Contact from '../pages/views/Main/Contact'
+import CategoryManager from '../pages/views/Admin/Category'
+import AddCategory from '../pages/views/Admin/Category/AddCategory'
 
 const Routers = ({ 
         products, 
@@ -39,11 +43,22 @@ const Routers = ({
                             <Route path='/admin' exact>
                                 <Dashboard />
                             </Route>
+
                             <Route path='/admin/products'>
                                 <ProductsManager products={products} onRemove={onHandleRemove} setProducts={setProducts} />
                             </Route>
                             <Route path='/admin/product/add'>
                                 <AddProduct onAdd={onAdd} categories={categories} />
+                            </Route>
+                            <Route path="/admin/product/:id" exact>
+                                <EditProduct categories={categories} products={products} />
+                            </Route>
+
+                            <Route path='/admin/categories'>
+                                <CategoryManager categories={categories} setCategories={setCategories} />
+                            </Route>
+                            <Route path='/admin/category/add'>
+                                <AddCategory categories={categories} setCategories={setCategories} />
                             </Route>
                         </Switch>
                     </LayoutAdmin>
@@ -64,6 +79,18 @@ const Routers = ({
                                     setCategory={setCategory} 
                                     category={category}
                                 />
+                            </Route>
+                            <Route path="/shop" exact>
+                                <Shop />
+                            </Route>
+                            <Route path="/category/:cate_id" exact>
+                                <Shop />
+                            </Route>
+                            <Route path="/about-us" exact>
+                                <About />
+                            </Route>
+                            <Route path="/contact-us" exact>
+                                <Contact />
                             </Route>
                             <Route path="/404-not-found">
                                 <Error404 />

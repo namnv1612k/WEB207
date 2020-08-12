@@ -68,6 +68,31 @@
     {
       "name": "Điện thoại",
       "id": 3
+    },
+    {
+      "name": "Tivi màn hình phẳng",
+      "image": "https://firebasestorage.googleapis.com/v0/b/storage-2ebad.appspot.com/o/images%2Fhome2-category-1.jpg?alt=media&token=d02fa8c5-938a-4993-aed1-1d29f4c755fe",
+      "id": 4
+    },
+    {
+      "name": "Smart phone 2020",
+      "image": "https://firebasestorage.googleapis.com/v0/b/storage-2ebad.appspot.com/o/images%2Fhome2-category-4.jpg?alt=media&token=24cecbed-b094-42bc-99d3-4b704ec3cfae",
+      "id": 5
+    },
+    {
+      "name": "Máy chơi game",
+      "image": "https://firebasestorage.googleapis.com/v0/b/storage-2ebad.appspot.com/o/images%2Fhome2-category-3.jpg?alt=media&token=237b6170-dc81-492e-ba41-4ae8b4e4dee6",
+      "id": 6
+    },
+    {
+      "name": "Laptop - Thiết Bị IT",
+      "image": "https://firebasestorage.googleapis.com/v0/b/storage-2ebad.appspot.com/o/images%2Fhome2-category-6.jpg?alt=media&token=cfdfe6f5-6a20-44a3-85ab-262e5d3768ab",
+      "id": 7
+    },
+    {
+      "name": "Nguyễn Văn Nam",
+      "image": "https://firebasestorage.googleapis.com/v0/b/storage-2ebad.appspot.com/o/images%2Fhome2-category-4.jpg?alt=media&token=ca2a5511-0966-42c9-8904-12972c50faaa",
+      "id": 8
     }
   ],
   "products": [
@@ -77,7 +102,9 @@
       "price": 2000000,
       "image": "https://cdn.tgdd.vn/Products/Images/42/211570/samsung-galaxy-a51-white-1-400x400.jpg",
       "desc": "Dùng thử miễn phí 7 ngày, hỗ trợ đổi máy tại nhà\nThu cũ đổi mới lên đời không mất phí\nMua trả góp 0% lãi suất tại nhà\nLỗi 1 đổi 1 sản phẩm khác, FREE 100% phí",
-      "cate_id": 1
+      "cate_id": 1,
+      "sale_price": 50000,
+      "stock": 20
     },
     {
       "id": 3,
@@ -85,7 +112,9 @@
       "price": 1000000,
       "image": "https://cdn.tgdd.vn/Products/Images/42/217287/oppo-a91-trang-600x600-400x400.jpg",
       "desc": "Combo cáp sạc cao cấp HOCO trị giá 150.000đ\nThu cũ đổi mới lên đời không mất phí\nMua trả góp 0% lãi suất tại nhà\nDùng thử miễn phí 3 ngày, hỗ trợ đổi máy tại nhà",
-      "cate_id": 2
+      "cate_id": 2,
+      "sale_price": 50000,
+      "stock": 0
     },
     {
       "id": 4,
@@ -93,33 +122,43 @@
       "price": 2000000,
       "image": "https://cdn.tgdd.vn/Products/Images/42/78124/iphone-7-plus-32gb-gold-600x600-400x400.jpg",
       "desc": "Máy trần không hộp, ngoại hình đẹp không trầy, chức năng hoạt động đầy đủ, pin trên 85%, màn hình không điểm chết.",
-      "cate_id": 2
+      "cate_id": 2,
+      "sale_price": 50000,
+      "stock": 20
     },
     {
       "name": "tesst",
       "price": "12000",
       "image": "https://firebasestorage.googleapis.com/v0/b/storage-2ebad.appspot.com/o/images%2FGolden-Retriever-10-1024x686.jpg?alt=media&token=ad441103-1dfa-47ba-9bf6-f6aad47f6903",
-      "id": 5
+      "id": 5,
+      "sale_price": 50000,
+      "stock": 0
     },
     {
       "name": "teeeee",
       "price": "12000",
       "image": "https://firebasestorage.googleapis.com/v0/b/storage-2ebad.appspot.com/o/images%2F110094266_319000006147143_7705818573112667544_n.jpg?alt=media&token=4487ea7a-6172-4df0-96ca-618c5fbed994",
-      "id": 6
+      "id": 6,
+      "sale_price": 50000,
+      "stock": 20
     },
     {
       "name": "abc",
       "price": "12000",
       "desc": "mo ta",
       "image": "https://firebasestorage.googleapis.com/v0/b/storage-2ebad.appspot.com/o/images%2FGolden-Retriever-10-1024x686.jpg?alt=media&token=e08c0fa4-1473-4c59-a85c-9f46d6d52927",
-      "id": 7
+      "id": 7,
+      "sale_price": 50000,
+      "stock": 20
     },
     {
       "name": "abc",
       "price": "12000",
       "desc": "mo ta",
       "image": "https://firebasestorage.googleapis.com/v0/b/storage-2ebad.appspot.com/o/images%2FGolden-Retriever-10-1024x686.jpg?alt=media&token=e08c0fa4-1473-4c59-a85c-9f46d6d52927",
-      "id": 8
+      "id": 8,
+      "sale_price": 50000,
+      "stock": 20
     },
     {
       "name": "Samsung Galaxy HIHI",
@@ -127,7 +166,9 @@
       "price": "12000",
       "intro": "<p>giới thiệu</p>",
       "desc": "<p>m&ocirc; tả</p>",
-      "id": 9
+      "id": 9,
+      "sale_price": 50000,
+      "stock": 20
     },
     {
       "name": "Samsung Galaxy HIHI",
@@ -135,7 +176,31 @@
       "price": "12000",
       "intro": "<p>giới thiệu</p>",
       "desc": "<p>m&ocirc; tả</p>",
-      "id": 10
+      "id": 10,
+      "sale_price": 50000,
+      "stock": 20
+    },
+    {
+      "name": "Điện thoại tét",
+      "image": "https://firebasestorage.googleapis.com/v0/b/storage-2ebad.appspot.com/o/images%2F13.jpg?alt=media&token=c164fe7f-8495-4c7c-b711-18a6a6a441b8",
+      "price": "12000",
+      "sale_price": "1300",
+      "cate_id": null,
+      "stock": "0",
+      "intro": "<p>giới thiệu</p>",
+      "desc": "<p>m&ocirc; tả</p>",
+      "id": 11
+    },
+    {
+      "name": "Điện thoại tét",
+      "image": "https://firebasestorage.googleapis.com/v0/b/storage-2ebad.appspot.com/o/images%2F13.jpg?alt=media&token=c164fe7f-8495-4c7c-b711-18a6a6a441b8",
+      "price": "12000",
+      "sale_price": "1300",
+      "cate_id": null,
+      "stock": "0",
+      "intro": "<p>giới thiệu</p>",
+      "desc": "<p>m&ocirc; tả</p>",
+      "id": 12
     }
   ],
   "posts": [

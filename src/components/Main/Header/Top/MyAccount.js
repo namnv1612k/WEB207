@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 
 const MyAccount = props => {
     return (
@@ -9,6 +10,7 @@ const MyAccount = props => {
             <div className="menu-my-account-container">
               <a href="#">My Account <i className="ion-ios-arrow-down" /></a>
               <ul>
+                <li><Link to="/admin" className="text-danger">Admin</Link></li>
                 <li><a href="my-account.html">My Account</a></li>
                 <li><a href="login.html">Login</a></li>
                 <li><a href="register.html">Register</a></li>
