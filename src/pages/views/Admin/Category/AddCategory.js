@@ -27,10 +27,10 @@ const AddCategory = ({categories, setCategories}) => {
             let newCate = newData
             axios.post('http://localhost:8080/categories', newData)
                 .then(() => {
-                    // setCategories([
-                    //     categories,
-                    //     ...newCate
-                    // ])
+                    setCategories([
+                        ...categories,
+                        newCate
+                    ])
                     history.push('/admin/categories')
                 })
                 .catch((error) => {

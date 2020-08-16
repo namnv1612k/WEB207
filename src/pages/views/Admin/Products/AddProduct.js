@@ -2,42 +2,48 @@ import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { useHistory } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
-import ProductApi from '../../../../api/productApi'
-import ReactFirebaseFileUpload from '../../../../firebase/uploadImage'
+import axios from 'axios'
+import firebase from '../../../../firebase'
 import {Editor} from '@tinymce/tinymce-react'
 import categoryApi from '../../../../api/categoryApi'
 
 const AddProduct = ({ onAdd }) => {
-    const [urlImage, setUrlImage] = useState("");
-    const [image, setImage] = useState(null);
-    const [progress, setProgress] = useState(0);
+    useEffect(() => {
+        window.scroll({top: 0})
+    }, [])
     const [intro, setIntro] = useState('')
     const [desc, setDesc] = useState('')
 
     const [cates, setCates] = useState([])
 
-    // console.log('Categories in add product: ',categories)
-
     const { register, handleSubmit, errors } = useForm();
     let history = useHistory();
 
-    const onHandleSubmit = async (data) => {
-        const newData = {
-            ...data
-        }
-        newData.intro = intro
-        newData.desc = desc
-        console.log(newData)
-        if (!newData.cate_id) {
-            newData.cate_id = null
-        }
-        if (urlImage !== "") {
-            newData.image = urlImage;
-            await ProductApi.create(newData);
-            onAdd(newData)
-            history.push('/admin/products')
-        }
-
+    const onHandleSubmit = (data) => {
+        let file = data.image[0];
+        // tạo reference chứa ảnh trên firesbase
+        let storageRef = firebase.storage().ref(`images/${file.name}`);
+        // đẩy ảnh lên đường dẫn trên
+        storageRef.put(file).then(function () {
+            storageRef.getDownloadURL().then((url) => {
+                // Tạo object mới chứa toàn bộ thông tin từ input
+                const newData = {
+                    ...data,
+                    desc,
+                    intro,
+                    image: url
+                }
+                axios.post('http://localhost:8080/products', newData)
+                    .then(() => {
+                        // đẩy dữ liệu ra ngoài app.js thông qua props onAdd
+                        history.push('/admin/products')
+                        onAdd(newData)
+                    })
+                    .catch((error) => {
+                        console.error('Add product failed: ', error)
+                    })
+            })
+        });
     }
 
 
@@ -84,8 +90,18 @@ const AddProduct = ({ onAdd }) => {
                     </small>
                 </div>
                 <div className="form-group">
-                    <ReactFirebaseFileUpload register={register} errors={errors} urlImage={urlImage} progress={progress} image={image} setUrlImage={setUrlImage} setProgress={setProgress} setImage={setImage} />
-                    <img src={urlImage || "http://via.placeholder.com/300"} height="300px" className="pt-3" alt="firebase-image" />
+                    <label htmlFor="productPrice">Ảnh sản phẩm</label>
+                    <div className="input-group">
+                        <div className="custom-file">
+                            <input type="file"
+                                className="custom-file-input"
+                                id="inputGroupFile02"
+                                name="image"
+                                ref={register}
+                            />
+                            <label className="custom-file-label" htmlFor="inputGroupFile02" aria-describedby="imageHelp">Choose image</label>
+                        </div>
+                    </div>
                 </div>
                 <div className="form-group">
                     <div className="col-3">

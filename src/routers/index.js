@@ -7,6 +7,7 @@ import Dashboard from '../pages/views/Admin/Dashboard'
 import ProductsManager from '../pages/views/Admin/Products'
 import AddProduct from '../pages/views/Admin/Products/AddProduct'
 import EditProduct from '../pages/views/Admin/Products/EditProduct'
+import BlogManager from '../pages/views/Admin/Blog'
 
 //Views
 import About from '../pages/views/Main/About'
@@ -17,6 +18,8 @@ import Shop from '../pages/views/Main/Shop'
 import Contact from '../pages/views/Main/Contact'
 import CategoryManager from '../pages/views/Admin/Category'
 import AddCategory from '../pages/views/Admin/Category/AddCategory'
+import BlogList from '../pages/views/Main/Blog'
+import AddBlog from '../pages/views/Admin/Blog/add'
 
 const Routers = ({ 
         products, 
@@ -44,22 +47,36 @@ const Routers = ({
                                 <Dashboard />
                             </Route>
 
+                            {/* Admin product */}
                             <Route path='/admin/products'>
-                                <ProductsManager products={products} onRemove={onHandleRemove} setProducts={setProducts} />
+                                <ProductsManager products={products} onRemove={onHandleRemove} setProducts={setProducts} categories={categories} />
                             </Route>
                             <Route path='/admin/product/add'>
                                 <AddProduct onAdd={onAdd} categories={categories} />
                             </Route>
                             <Route path="/admin/product/:id" exact>
-                                <EditProduct categories={categories} products={products} />
+                                <EditProduct categories={categories} setProducts={setProducts} />
                             </Route>
+                            {/* End admin product */}
 
+                            {/* Admin category */}
                             <Route path='/admin/categories'>
                                 <CategoryManager categories={categories} setCategories={setCategories} />
                             </Route>
                             <Route path='/admin/category/add'>
                                 <AddCategory categories={categories} setCategories={setCategories} />
                             </Route>
+                            {/* End admin category */}
+
+                            {/* Blog admin */}
+                            <Route path="/admin/blogs" exact>
+                                <BlogManager />
+                            </Route>
+                            <Route path="/admin/blog/add" exact>
+                                <AddBlog />
+                            </Route>
+                            {/* End blog admin */}
+
                         </Switch>
                     </LayoutAdmin>
                 </Route>
@@ -72,6 +89,8 @@ const Routers = ({
                             <Route path="/about">
                                 <About />
                             </Route>
+
+                            {/* Product */}
                             <Route path="/product/:id" exact>
                                 <DetailProduct 
                                     product={productDetail} 
@@ -86,12 +105,32 @@ const Routers = ({
                             <Route path="/category/:cate_id" exact>
                                 <Shop />
                             </Route>
+                            {/* End product */}
+
+                            {/* About us */}
                             <Route path="/about-us" exact>
                                 <About />
                             </Route>
+                            {/* End about us */}
+
+                            {/* Contact us */}
                             <Route path="/contact-us" exact>
                                 <Contact />
                             </Route>
+                            {/* End contact us */}
+
+                            {/* Blog list */}
+                            <Route path="/blog" exact>
+                                <BlogList />
+                            </Route>
+                            <Route path="/blog/category/:category_id">
+                                <BlogList />
+                            </Route>
+                            <Route path="/blog/:id">
+
+                            </Route>
+                            {/* End blog list */}
+
                             <Route path="/404-not-found">
                                 <Error404 />
                             </Route>

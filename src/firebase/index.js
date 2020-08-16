@@ -1,7 +1,6 @@
-import firebase from "firebase/app";
-import "firebase/storage";
+import firebase from 'firebase';
 
-const firebaseConfig = {
+var config = {
     apiKey: "AIzaSyDQRxrBk_8NVdvuWRLp4OP3mlk1Seu3vVA",
     authDomain: "storage-2ebad.firebaseapp.com",
     databaseURL: "https://storage-2ebad.firebaseio.com",
@@ -10,10 +9,8 @@ const firebaseConfig = {
     messagingSenderId: "1010820280121",
     appId: "1:1010820280121:web:e3eef69b9f233720f042e8",
     measurementId: "G-T36YJNEY6S"
-  };
+};
+// Initialize Firebase
+firebase.initializeApp(config);
 
-firebase.initializeApp(firebaseConfig);
-
-const storage = firebase.storage();
-
-export { storage, firebase as default };
+export default firebase

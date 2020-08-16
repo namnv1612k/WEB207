@@ -59,15 +59,18 @@
   "categories": [
     {
       "id": 1,
-      "name": "Máy tính"
+      "name": "Máy tính",
+      "image": "https://firebasestorage.googleapis.com/v0/b/storage-2ebad.appspot.com/o/images%2Fcategories%2Fhome2-category-1.jpg?alt=media&token=49195704-06ca-44ad-8435-1d95feebc231"
     },
     {
       "id": 2,
-      "name": "Laptop"
+      "name": "Laptop",
+      "image": "https://firebasestorage.googleapis.com/v0/b/storage-2ebad.appspot.com/o/images%2Fcategories%2Fhome2-category-6.jpg?alt=media&token=5ad7393a-2a06-4aa7-8c13-6d2c18f4fd40"
     },
     {
       "name": "Điện thoại",
-      "id": 3
+      "id": 3,
+      "image": "https://firebasestorage.googleapis.com/v0/b/storage-2ebad.appspot.com/o/images%2Fcategories%2Fhome2-category-4.jpg?alt=media&token=bab1c0ef-dd50-470c-bf25-f16fb775a63e"
     },
     {
       "name": "Tivi màn hình phẳng",
@@ -88,11 +91,6 @@
       "name": "Laptop - Thiết Bị IT",
       "image": "https://firebasestorage.googleapis.com/v0/b/storage-2ebad.appspot.com/o/images%2Fhome2-category-6.jpg?alt=media&token=cfdfe6f5-6a20-44a3-85ab-262e5d3768ab",
       "id": 7
-    },
-    {
-      "name": "Nguyễn Văn Nam",
-      "image": "https://firebasestorage.googleapis.com/v0/b/storage-2ebad.appspot.com/o/images%2Fhome2-category-4.jpg?alt=media&token=ca2a5511-0966-42c9-8904-12972c50faaa",
-      "id": 8
     }
   ],
   "products": [
@@ -201,32 +199,86 @@
       "intro": "<p>giới thiệu</p>",
       "desc": "<p>m&ocirc; tả</p>",
       "id": 12
+    },
+    {
+      "name": "Văn Nam",
+      "image": "https://firebasestorage.googleapis.com/v0/b/storage-2ebad.appspot.com/o/images%2Fproduct5.jpg?alt=media&token=c1e56347-94ad-471d-8a81-b72456ec2329",
+      "price": "12000",
+      "sale_price": "11000",
+      "cate_id": 8,
+      "stock": "0",
+      "desc": "<p>s</p>",
+      "intro": "<p>s</p>",
+      "id": 13
+    },
+    {
+      "name": "Samsung Galaxy HIHI",
+      "image": "https://firebasestorage.googleapis.com/v0/b/storage-2ebad.appspot.com/o/images%2Fproduct7.jpg?alt=media&token=10633a51-40fb-4b9d-9cda-06c6ac35fda4",
+      "price": "111",
+      "sale_price": "13000",
+      "cate_id": "1",
+      "stock": "0",
+      "desc": "<p>retgre</p>",
+      "intro": "<p>asdas</p>",
+      "id": 14
+    },
+    {
+      "name": "demo",
+      "image": "https://firebasestorage.googleapis.com/v0/b/storage-2ebad.appspot.com/o/images%2Fproduct7.jpg?alt=media&token=ee5bbea6-b706-4625-94e1-9a7196b2ea4f",
+      "price": "12000",
+      "sale_price": "11000",
+      "cate_id": "8",
+      "stock": "2",
+      "desc": "<p>qweqweqwe</p>",
+      "intro": "<p>aasdfasd</p>",
+      "id": 18
     }
   ],
   "posts": [
     {
       "id": 1,
       "name": "Bài viết số 1",
-      "desc": "nội dung bài viết số 1",
-      "user_id": 1
+      "image": "https://firebasestorage.googleapis.com/v0/b/storage-2ebad.appspot.com/o/images%2Fposts%2Fblog1.jpg?alt=media&token=4dec5a6d-a4f9-4dec-a3ea-da971fdcfaef",
+      "content": "nội dung bài viết số 1",
+      "user_id": 1,
+      "cate_id": 1,
+      "created_at": "16/10/2000"
     },
     {
       "id": 2,
       "name": "Bài viết số 2",
-      "desc": "nội dung bài viết số 2",
-      "user_id": 2
+      "content": "nội dung bài viết số 2",
+      "user_id": 2,
+      "image": "https://firebasestorage.googleapis.com/v0/b/storage-2ebad.appspot.com/o/images%2Fposts%2Fblog2.jpg?alt=media&token=da692a7c-ed07-470e-a853-b90f77ccc0b9",
+      "cate_id": null,
+      "created_at": "01/10/2020"
     },
     {
       "id": 3,
       "name": "Bài viết số 3",
-      "desc": "nội dung bài viết số 3",
-      "user_id": 1
+      "content": "nội dung bài viết số 3",
+      "user_id": 1,
+      "image": "https://firebasestorage.googleapis.com/v0/b/storage-2ebad.appspot.com/o/images%2Fposts%2Fblog3.jpg?alt=media&token=7fb49cf2-3fcb-400d-847a-97643ddb2b66",
+      "cate_id": 3,
+      "created_at": "16/01/2020"
     },
     {
       "id": 4,
       "name": "Bài viết số 4",
-      "desc": "nội dung bài viết số 4",
-      "user_id": 2
+      "content": "nội dung bài viết số 4",
+      "user_id": 2,
+      "image": "https://firebasestorage.googleapis.com/v0/b/storage-2ebad.appspot.com/o/images%2Fposts%2Fblog4.jpg?alt=media&token=4cc473eb-840a-470c-8a2a-9a8f3940c846",
+      "cate_id": 2,
+      "created_at": "12/10/2020"
+    },
+    {
+      "id": 5,
+      "name": "Bài viết số 5",
+      "content": "Nội dung bài viết số 5",
+      "user_id": 2,
+      "image": "https://firebasestorage.googleapis.com/v0/b/storage-2ebad.appspot.com/o/images%2Fposts%2Fblog5.jpg?alt=media&token=e27e4550-ee73-4345-a220-3e8393b33f71",
+      "cate_id": 2,
+      "created_at": "21/10/2020"
     }
   ],
   "contact": {
@@ -333,5 +385,19 @@
     }
   ],
   "orders": [],
-  "order_detail": []
+  "order_detail": [],
+  "post_cates": [
+    {
+      "id": 1,
+      "name": "Fashion"
+    },
+    {
+      "id": 2,
+      "name": "Image"
+    },
+    {
+      "id": 3,
+      "name": "Sound"
+    }
+  ]
 }

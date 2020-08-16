@@ -17,7 +17,6 @@ const update = (id, data) => {
 };
 
 const remove = id => {
-    console.log(id);
     return http.delete(`/categories/${id}`);
 };
 

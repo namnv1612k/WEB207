@@ -38,11 +38,11 @@ const CategoryManager = ({ categories, setCategories }) => {
                                 {categories.map(({ id, name, image }, index) => (
                                     <tr key={index}>
                                         <th scope="row">{id}</th>
-                                        <td>{name}</td>
+                                        <td className="text-primary">{name}</td>
                                         <td><img src={image} alt="" width="50" /></td>
                                         <td>
-                                            <button className="btn btn-primary" onClick={() => {if(window.confirm('Delete the item?')){removeHandle(id)};}}>Delete</button>
-                                            <Link to={`/admin/category/${id}`} className="btn btn-danger ml-2">Edit</Link>
+                                            <button className="btn btn-danger" onClick={() => {if(window.confirm('Delete the item?')){removeHandle(id)};}}>Delete</button>
+                                            <Link to={`/admin/category/${id}`} className="btn btn-info ml-2">Edit</Link>
                                         </td>
                                     </tr>
                                 ))}

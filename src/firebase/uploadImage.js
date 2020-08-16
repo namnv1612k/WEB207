@@ -1,5 +1,5 @@
 import React from "react";
-import { storage } from "./index";
+import { storage } from "./custom";
 
 const ReactFirebaseFileUpload = ({image,setImage,urlImage,setUrlImage,progress,setProgress, register, errors}) => {
 
